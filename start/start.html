@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Start</title>
+    <!--[if IE]><style>#targetIE {margin-left:-2.5px;}</style><![endif]-->
+    <link rel="stylesheet" href="start_style.css"/>
+    <link rel="stylesheet" href="scrollbar.css"/>
+        <script src="jquery-1.8.0.min.js" type="text/javascript"></script>
+        <script src="jquery-ui-1.8.23.min.js" type="text/javascript"></script>
+        <script src="cursorpagescroll.js" type="text/javascript"></script>
+        <script src="mousewheel.js" type="text/javascript"></script>
+    <script>
+    function scale(){
+      $("#tiles").addClass("zoomoutview");
+      $("#zoomoutbutton").hide("fast");
+      $("#zoominbutton").fadeIn("fast");
+    }
+    function unscale(){
+      $("#tiles").removeClass("zoomoutview");
+      $("#zoominbutton").fadeOut("fast");
+      $("#zoomoutbutton").fadeIn("fast");
+    }
+
+    </script>
+    <script>
+    function changebg(iurl) {
+      document.body.style.backgroundImage='url(' + iurl + ')';
+      document.body.style.backgroundSize='cover';
+      document.body.style.backgroundAttachment='scroll';
+    }
+    function resetbg(imgurl) {
+      document.body.style.backgroundImage='url(' + imgurl + ')';
+      document.body.style.backgroundSize='100%';
+      document.body.style.backgroundAttachment='fixed';
+    }
+    </script>
+    <script>
+
+          function AddMouseWheel(){
+                $("body").mousewheel(function(event, delta){
+                    var scroll_value = delta * 50;
+                    if (!jQuery.browser.chrome) {
+                        document.documentElement.scrollLeft -= scroll_value;
+                } else {
+                    this.scrollLeft -= scroll_value;
+                }
+                return false;
+            });
+        }
+
+        $(function(){
+
+            AddMouseWheel();
+
+        })
+    </script>
+  <script type="text/javascript">
+  $(function()
+  {
+  $("#nameinput").keyup(function()
+  {
+  var name=$(this).val();
+  $("#name").html(name);
+  return false;
+  });
+  });
+  </script>
+  <script>
+  $(function()
+  {
+  $("#firstnameinput").keyup(function()
+  {
+  var firstname=$(this).val();
+  $("#firstname").html(firstname);
+  return false;
+  });
+  });
+  </script>
+</head>
+<body>
+  <div id="starttext" onclick="document.getElementById('userdropdown').style.display='none';">
+    <span>Start</span>
+  </div>
+  <div id="user" onclick="document.getElementById('userdropdown').style.display='block';">
+    <div id="names">
+      <p id="firstname">Samuel</p>
+      <p id="name">Denty</p>
+    </div>
+    <img src="m.png" id="userimage"/>
+  </div>
+  <ul id="userdropdown">
+    <a href="http://mirum.weebly.com/samuel-denty"><li>About me</li></a>
+  </ul>
+  <div id="tiles"  onclick="document.getElementById('userdropdown').style.display='none';">
+    <div class="block">
+      <div class="blocktitle">
+      Main apps
+      </div>
+      <div class="line">
+        <div class="tile">
+        <a href="http://outlook.com" target="_blank">
+          <img src="mail_tile.png" height="125" width="258"/>
+          <p>Mail</p>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="smartsearch.html">
+            <img src="smartsearch_tile.png" height="125" width="258"/>
+          </a>
+          <p class="black"></p>
+        </div>
+      </div>
+      <div class="line">
+      <div class="tile">
+          <a href="calendar.html">
+            <img src="calendar_tile.png" height="125" width="258"/>
+          </a>
+          <p>Calendar</p>
+        </div>
+        <div class="tile">
+          <a href="camera.html">
+            <img src="camera_tile.png" height="125" width="125"/>
+          </a>
+          <p>Camera</p>
+        </div>
+        <div class="tile">
+         <a href="map.html">
+           <img src="maps_tile.png" height="125" width="125"/>
+          </a>
+         <p>Maps</p>
+        </div>
+      </div>
+
+      <div class="line">
+        <div class="tile">
+          <a href="calculator.html">
+            <img src="calc_tile.png" height="125" width="125"/>
+          </a>
+          <p>Calculator</p>
+        </div>
+        <div class="tile">
+          <a href="MirumCodeApp.html">
+            <img src="MirumCodeApp_tile.png" height="125" width="125"/>
+          </a>
+          <p>MirumCode</p>
+        </div>
+      </div>
+    </div>
+    <div class="block two">
+      <div class="blocktitle">
+      Games
+      </div>
+      <div class="line">
+        <div class="tile">
+          <a href="captainforever.html">
+            <img src="captainforever_tile.gif" height="125" width="258"/>
+          </a>
+          <p>Captain Forever</p>
+        </div>
+        <div class="tile">
+          <a href="fruitninja.html">
+            <img src="fruitninja_tile.png" height="125" width="258"/>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="slither.io.html">
+            <img src="slither.io_tile.png" height="125" width="258"/>
+          </a>
+        </div>
+      </div>
+      <div class="line">
+        <div class="tile">
+          <a href="angrybirds.html">
+            <img src="angrybirds_tile.png" height="125" width="258"/>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="contrejour.html">
+            <img src="contrejour_tile.png" height="125" width="258"/>
+          </a>
+          <p></p>
+        </div>
+      </div>
+      <div class="line">
+      <div class="tile">
+          <a href="battleship.html">
+            <img src="battleship_tile.png" height="125" width="125"/>
+            <p>Battleship</p>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="symbolistic.html">
+            <img src="symbolistic_tile.png" height="125" width="125"/>
+          </a>
+          <p>Symbolistic</p>
+        </div>
+        <div class="tile">
+          <a href="portal.html">
+            <img src="portalsmall_tile.png" height="125" width="125"/>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="pacman.html">
+            <img src="pacman_tile.png" height="125" width="125"/>
+          </a>
+        </div>
+        <div class="tile">
+          <a href="agent8ball.html">
+            <img src="agent8ball_tile.png" height="125" width="125"/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="starthoverarea" onmouseover="start()"></div>
+  <div id="startbutton" onmouseout="destroystart()">
+    <img src="start.png"/>
+  </div>
+
+  </div>
+<script type='text/javascript' >
+ new CursorPageScroll( 7, 50 );
+</script>
+<script src="https://apis.google.com/js/plusone.js"></script>
+</body>
+</html>

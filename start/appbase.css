@@ -1,0 +1,228 @@
+/* CSS Reset + Font */
+body {
+  font-family:Segoe UI;
+  margin:0px;
+  padding:0px;
+}
+img, a {
+  border:none;
+  outline:none;
+}
+
+/* Splashscreen */
+#splashscreen {
+  position:fixed;
+  width:100%;
+  height:100%;
+  color:#FFF;
+  background-image:url('smartsearch_splashscreen.png');
+  background-position:center;
+  background-color:#FFF;
+  background-repeat:no-repeat;
+  animation:splash 4s;
+  -ms-animation:splash 4s;
+  -webkit-animation:splash 4s;
+  -o-animation:splash 4s;
+  opacity:0;
+  z-index:-1;
+}
+@keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-webkit-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-ms-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-o-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+/* Charms */
+/* Hover areas */
+#hoverarea {
+  position:fixed;
+  top:0px;
+  right:0px;
+  width:15px;
+  height:15px;
+}
+#bottomhoverarea {
+  position:fixed;
+  bottom:0px;
+  right:0px;
+  width:15px;
+  height:15px;
+}
+#starthoverarea {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:15px;
+  height:15px;
+}
+/* Charms bar */
+#charmsbar {
+  display:none;
+  background-color:#111111;
+  position:fixed;
+  padding:5% 0;
+  top:0px;
+  right:0px;
+  height:100%;
+  width: 86px;
+
+}
+/* Start button */
+#startbutton {
+  display:none;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  margin:0;
+  padding:0;
+}
+/* Date and time on charms */
+#datetime {
+  display:none;
+  position:fixed;
+  left:50px;
+  bottom:50px;
+  width:490px;
+  height:139px;
+  background-color: rgba(17,17,17,0.96);
+  color:#FFFFFF;
+}
+#ctime {
+  position:absolute;
+  left:70px;
+  bottom:19px;
+  font-family: Segoe UI Light;
+  font-size: 64pt;
+}
+#date {
+  margin-top:20px;
+  margin-right:20px;
+  float:right;
+  font-size:24pt;
+}
+#iconnetwork {
+  position:absolute;
+  top:35px;
+  left:25px;
+}
+#iconbattery {
+  position:absolute;
+  bottom:35px;
+  left:32px;
+}
+
+/* Text styling on Settings, share charms */
+.charms span {
+  line-height:40px;
+}
+.ch1 {
+  font-family:Segoe UI Semilight;
+  font-size:28px;
+  margin-bottom:25px;
+}
+.ch2 {
+  font-size:11pt;
+  margin-bottom:25px;
+}
+.ch2d {
+  font-size:11pt;
+  color:#A8A8A8;
+  margin-bottom:25px;
+}
+.ch3 {
+  font-size:9pt;
+}
+.sharing {
+  font-size:14pt;
+}
+/* Close button on settings, share charms */
+.closecharms {
+  float:right;
+  height:32px !important;
+  width:32px !important;
+  box-shadow:none !important;
+  background-image: url(../img/charmsbar/close.png);
+}
+/*.closecharms:hover {
+  background-image: url(../img/charmsbar/close-hover.png);
+}*/
+.closecharms:active {
+  background-image: url(../img/charmsbar/close-active.png);
+}
+/* Charms */
+.charms {
+  z-index:2;
+  background-color:#001E4E;
+  padding : 40px;
+  position:fixed;
+  top:0px;
+  right:0px;
+  height:100%;
+  width: 345px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display:none;
+  color:#FFF;
+}
+/* Settings charms */
+#settingscharms {
+
+}
+.charms input[type="text"] {
+  width:200px;
+  height:32px;
+  border:none;
+}

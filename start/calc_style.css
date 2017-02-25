@@ -1,0 +1,139 @@
+body {
+	background-color:#262626;
+	color:#FFFFFF;
+	font-family:Segoe UI;
+	margin:0;
+	padding:0;
+	width:3000px;
+}
+
+pre {
+	font-family:Segoe UI;
+}
+#firstblock {
+	position:absolute;
+	height:100%;
+	width:100%;
+	bottom:0px;
+}
+#secondblock {
+	position:absolute;
+	left:50%;
+	height:100%;
+	width:100%;
+	bottom:0px;
+}
+#thirdblock {
+	position:absolute;
+	left:90%;
+	height:100%;
+	width:100%;
+	bottom:0px;
+}
+.blocktitle {
+	font-family:Segoe UI Light;
+	font-size: 24pt;
+	margin:25px;
+}
+iframe {position:absolute !important;}
+h2 {
+	font-family: Segoe UI Light;
+	font-weight:normal;
+}
+h3 {
+	font-family: Segoe UI Light;
+	font-weight:normal;
+	margin:0px;
+}
+a {
+	text-decoration:none;
+	color:#FFFFFF;
+}
+a:hover {
+	text-decoration:underline;
+}
+li.selected {
+	color: rgb(0, 114, 198);
+}
+table {
+	border:none;
+}
+td {
+	border:none;
+}
+tr {
+	border:none;
+}
+input {
+	font-family:Segoe UI;
+	font-size:14pt;
+	background-color:rgba(255,255,255,0.6);
+	border:none;
+	padding:15px 20px;
+	transition:all 1s;
+}
+input:hover {
+    	background-color: rgba(255,255,255,0.7);
+}
+input:active, input[type="text"]:focus {
+	background-color:rgba(255,255,255,0.9);
+}
+.actionbutton {
+	background-color:#606060;
+	opacity: 0.76;
+}
+.actionbutton:hover {
+	background-color:#606060;
+	opacity: 0.86;
+}
+.actionbutton:active {
+	background-color:#606060;
+	opacity: 0.96;
+}
+#deletebutton {
+	background-color: rgba(219,40,30,0.6);
+}
+#deletebutton:hover {
+	background-color: rgba(219,40,30,0.7);
+}
+#deletebutton:active {
+	background-color: rgba(219,40,30,0.9);
+}
+.resultbutton {
+	background-color: rgba(0, 114, 198, 0.6);
+}
+.resultbutton:hover {
+	background-color: rgba(0, 114, 198, 0.7);
+}
+.resultbutton:active {
+	background-color: rgba(0, 114, 198, 0.9);
+}
+#scientific input {
+	margin:1px;
+}
+#solver {
+	float:left;
+	margin-top:0px;
+	margin-left:30px;
+}
+#datediff {
+	float:right;
+	margin-top:0px;
+	margin-right: 80px;
+}
+#solver input , #datediff input , #binaryconvert input , #circlesolver input {
+	height:30px;
+	padding:3px;
+	font-size:11pt;
+	margin-top:3px;
+}
+#circlesolver {
+	position:absolute;
+	bottom:128px;
+	margin-left:30px;
+}
+#binaryconvert {
+	position:absolute;
+	bottom:20px;
+	margin-left:30px;
+}

@@ -1,0 +1,117 @@
+body {
+background-color: #e53935;
+margin:0px;
+}
+
+.card {
+margin-top:2%;
+font-family: 'Roboto', sans-serif;
+right:left%;
+text-align: center;
+color: #263238;
+background-color: #fff;
+width: 540px;
+padding-bottom: 20px;
+border-radius: 4px;
+}
+
+.BtnStyle,
+.BtnStyle:focus {
+padding: 16px 30px;
+color: #fff;
+font-size: .9em;
+border: 2px solid #f44336;
+border-radius: 6px;
+text-align: center;
+text-transform: uppercase;
+transition: background-color 0.65s ease, border 0.65s ease;
+height: auto;
+line-height: 1;
+background-color:#f44336;
+margin:5px;
+outline:none;
+}
+
+.BtnStyle:hover {
+cursor: pointer;
+color: #f44336 !important;
+background: none;
+}
+
+input {
+font-family: 'Roboto', sans-serif;
+border:none;
+border-radius: 4px;
+font-size: 20px;
+text-align: center;
+background-color: #E0E0E0;
+color: #37474F;
+font-weight: normal;
+padding: 6px;
+transition: background-color 0.65s ease;
+margin-top:20px;
+}
+
+input:hover {
+background-color: ;
+}
+
+input:focus {
+background-color:#EEEEEE;
+outline: none;
+}
+
+#content {
+position:absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0px;
+}
+
+#LogoFrame {
+text-align:left;
+width: 100%;
+background: #fff;
+border-radius: 4px;
+transition: background-color 2.65s ease;
+}
+
+#LogoFrame:hover {
+background-color: #EEEEEE;
+}
+
+#LogoFrame:active {
+background-color: #BDBDBD;
+}
+
+.logo {
+width: 512px;
+height: 128px;
+padding:10px;
+}
+
+#SD-StorageLogo {
+background-color: rgba(255,255,255,.65);
+border-radius: 50px;
+z-index: 1000;
+position: fixed;
+text-decoration: none;
+display: inline-block;
+word-wrap: break-word;
+box-shadow: 0px 0px 10px #535353;
+bottom: 5;
+right: 5;
+transition: background-color 0.75s ease,padding 0.25s ease;
+}
+
+#SD-StorageLogo:hover {
+padding:2px;
+background-color: rgba(255,255,255,.95);
+}
+
+#SD-StorageLogo:active {
+background-color: #242B27;
+color: #FFFFFF;
+box-shadow: 0px 0px 10px #FFFFFF;
+}

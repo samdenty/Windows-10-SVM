@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<title>About</title>
+		<link rel="shortcut icon" href="../favicon.ico"/>
+		<link rel="stylesheet" href="about.css"/>
+		<link rel="stylesheet" href="charmsabout.css"/>
+		<script>
+		function charms(){
+			document.getElementById('charmsbar').style.display='block';
+			document.getElementById('datetime').style.display='block';
+		}
+		function destroycharms() {
+			document.getElementById('charmsbar').style.display='none';
+			document.getElementById('datetime').style.display='none';
+		}
+		function start(){
+			document.getElementById('startbutton').style.display='block';
+		}
+		function destroystart() {
+			document.getElementById('startbutton').style.display='none';
+		}
+		</script>
+	</head>
+<body>
+	<div id="title">
+		<span>About</span>
+	</div>
+	<h2>What is this ?</h2>
+	<p>This is an online Windows 8 simulator. Fully made out of HTML, CSS and JS.</p>
+	<h2>Why was this created ?</h2>
+	<p>Many people don't know what "Metro UI" is. They are hesitating to download the Windows 8 Betas available. We would like to give those people an experience of Metro in a browser.</p>
+	<h2>Creators</h2>
+	<p>- ntim007</p>
+	<p>- DaKoder</p>
+	<p>- link6155</p>
+	<p>- blindbartemais</p>
+	<h2>Credits</h2>
+	<p>- scripterkid2 for providing us some screenshots</p>
+	<p>- yaldex.com for providing some free scripts</p>
+	<p>- 10k contest for some apps</p>
+	<p>- Metro UI for some backgrounds</p>
+	<p>- metro.js for the live tiles</p>
+	<p>- dAKirby309 for the weather icons on the weather app</p>
+	<div id="hoverarea" onmouseover="charms()"></div>
+		<div id="charmsbar" onmouseover="charms()" onmouseout="destroycharms()">
+			<img src="images/charmsbar/search.png" onmouseover="this.src='images/charmsbar/search-hover.png'" onmouseout="this.src='images/charmsbar/search.png'"/><br/>
+			<img src="images/charmsbar/share.png" onclick="sharecharms.style.display='inline';"onmouseover="this.src='images/charmsbar/share-hover.png'" onmouseout="this.src='images/charmsbar/share.png'"/><br/>
+			<a href="index.html"><img src="images/charmsbar/start.png" onmouseover="this.src='images/charmsbar/start-hover.png'" onmouseout="this.src='images/charmsbar/start.png'"/></a><br/>
+			<img src="images/charmsbar/devices.png" onmouseover="this.src='images/charmsbar/devices-hover.png'" onmouseout="this.src='images/charmsbar/devices.png'"/><br/>
+			<img src="images/charmsbar/settings.png" onmouseover="this.src='images/charmsbar/settings-hover.png'" onmouseout="this.src='images/charmsbar/settings.png'" onclick="settingsc()"/><br/>
+		</div>
+		<div id="datetime">
+			<img src="images/network.png" id="iconnetwork" height="24px" width="24px"/>
+			<img src="images/battery.png" id="iconbattery"/>
+			<span id="time"></span>
+			<script>
+			<!-- Begin
+			function clock() {
+				var digital = new Date();
+				var hours = digital.getHours();
+				var minutes = digital.getMinutes();
+				var seconds = digital.getSeconds();
+				var amOrPm = "AM";
+				if (hours > 11) amOrPm = "PM";
+				if (hours > 12) hours = hours - 12;
+				if (hours == 0) hours = 12;
+				if (minutes <= 9) minutes = "0" + minutes;
+				if (seconds <= 9) seconds = "0" + seconds;
+				dispTime = hours + ":" + minutes ;
+				document.getElementById('time').innerHTML = dispTime;
+				setTimeout("clock()", 1000);
+			}
+			window.onmouseover=clock;
+			//  End -->
+			</script>
+			<div id="date">
+			<script>
+ 			var dayName = new Array ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+			var monName = new Array ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+ 			var now = new Date
+			document.write("" + dayName[now.getDay()] + "<br/>" +"<span id=month>" + monName[now.getMonth()] + " "+now.getDate() +"")
+ 			</script>
+		</div>
+	</div>
+	<div id="bottomhoverarea" onmouseover="charms()"></div>
+	<div id="starthoverarea" onmouseover="start()"></div>
+	<div id="startbutton" onmouseout="destroystart()">
+		<a href="index.html"><img src="images/start.png"/></a>
+	</div>

@@ -1,0 +1,210 @@
+<script src="jquery-latest.js"></script>
+<script src="lang.js"></script>
+
+
+<script>
+$(function() {
+  $(document).keyup(function(e) {
+    switch(e.keyCode) {
+    case 13 : document.getElementById("black").style.display="block"; setTimeout('document.getElementById("bsod").style.display="block";', 1100); break;
+    case 8 : document.getElementById("black").style.display="block"; setTimeout('document.getElementById("bsod").style.display="block";', 1100); break;
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+
+var message="Sorry, right-click has been disabled";
+function clickIE() {if (document.all) {(message);return false;}}
+function clickNS(e) {if
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers)
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+document.oncontextmenu=new Function("return false")
+// -->
+</script>
+
+
+
+
+<script>
+
+
+var count=0;
+var stage=1;
+var stage2=3;
+var counter=setInterval(timer, 14830); //1000 will  run it every 1 second
+var ref="Configuring updates";
+
+function timer()
+{
+  count=count+1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     return;
+  }
+
+ document.getElementById("timer").innerHTML=count +'%';
+
+
+
+   if (count > 99)
+  {
+     stage=stage+1;
+    document.getElementById("stage").innerHTML=stage +'';
+   count=0;
+    return;
+  }
+
+     if (stage > 3)
+  {
+     stage2=68;
+     ref="Installing Updates";
+    document.getElementById("ref").innerHTML=ref +'';
+    document.getElementById("stage2").innerHTML=stage2 +'';
+    return;
+  }
+
+}
+
+
+
+
+</script>
+<style>
+
+body {
+
+  background: url('win7_background.jpg') #054696 no-repeat center center fixed;
+user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+vertical-align:middle;
+text-align:center;
+z-index: -1;
+overflow:hidden;
+margin:0;
+padding:0;
+cursor: url(cursor.png), auto;
+
+}
+
+.CT {
+vertical-align:middle;
+position: absolute;
+top: 50%;
+height: 70px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+width:400px;
+margin-top: -5%;
+font-family:Segoe UI, Arial;
+font-size:23px;
+color:#fff;
+font-weight:normal;
+text-align:center;
+text-shadow: 0px 1px 5px rgba(0,0,0, 0.4);
+user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;
+}
+
+.image_block {
+
+
+position: absolute;
+bottom: 17px;
+left: 50%;
+width: 50%;
+margin: -5% 0 0 -25%;
+
+
+}
+p {
+
+display:block;
+float:middle;
+text-align:center;
+width:100%;
+
+
+}
+
+.centeragain {
+
+width:400px;
+margin:0px auto;
+text-align:left;
+
+
+}
+.messageBox {
+display:block;
+color:#67A2E6;
+font-family:Segoe UI, Arial;
+font-size:20px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+user-select:none;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;
+z-index:999;  }
+
+#black {
+display:none;
+}
+
+
+#bsod {
+display:none;
+}
+
+#myImage {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+    z-index:999;
+  height:100%;
+}
+
+#myImage2 {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+    z-index:998;
+  height:100%;
+}
+
+</style>
+
+</head>
+<body marginwidth="0" marginheight="0">
+
+
+
+
+
+<div style="display:block;position:absolute;min-width:100%; min-height:100%;margin:0;padding:0;">
+
+<div class="centeragain">
+<div class="CT">
+<div class="FONT">
+<img src="loading.gif" style="vertical-align:middle;padding-top:35px;float:left;" draggable="false" ondragstart="return false;">
+<a id="ref" data-translate="_win7configuringupdates">Configuring Windows Updates</a><br><a id="timer">2%</a> <span data-translate="_win7percent">complete.</span><br><span data-translate="_win7donotturnoff">Do not turn off your computer.</span>
+</div>
+</div>
+</div>
+<div class="image_block">
+<img src="windows.png" draggable="false" ondragstart="return false;">
+</div>
+</div>
+
+<div id="black"><img id="myImage2" src="black.png"></div><br>
+<div id="bsod"><img id="myImage" src="bsod.png"></div><br>
+</body></html>

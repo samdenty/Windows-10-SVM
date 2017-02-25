@@ -1,0 +1,27 @@
+<head>
+<link rel="stylesheet" href="chrome_styling.css" type="text/css" />
+<script>
+var whichClick;
+window.onload=function() { attachBehaviors(); }
+function attachBehaviors() {
+ var arr = new Array ('submitOne','submitTwo');
+ for (i=0;i<arr.length;i++) {
+  var but_id=arr[i];
+  if (document.getElementById(but_id)) {
+   document.getElementById(but_id).onclick=function() { whichClick=this.id; }}}}
+function convertURL(form) {
+ if (document.getElementById('url')) {
+  var url = document.getElementById('url').value;
+  }
+return false;}
+</script>
+<body>
+<center>
+<script>
+</script>
+<form class="browserMain" name="SearchForm" onsubmit="return convertURL(this);">
+<img class="back" src="back.png" onclick="window.history.back()"><input autocomplete="off" placeholder="Address bar" name="url" id="url" value="http://mirum.weebly.com" type="text" required>
+</form>
+<div id="browserFrame">
+<iframe id="chromecontent" src="http://mirum.weebly.com/#ProjectM0THERFUCK€R">
+</div>

@@ -1,0 +1,69 @@
+<body>
+<style>
+body {
+background-color: #FFFFFF;
+color:#888;
+-webkit-animation: anim 1s 1;
+-moz-animation: anim 1s 1;
+-o-animation: anim 1s 1;
+animation: anim 1s 1;
+cursor:default !important;
+}
+
+
+a {
+  text-decoration: none;
+  color: rgba(0,0,0,.4);
+  z-index: 1;
+  color: #0D8799;
+}
+
+a:before {
+content: "";
+position: absolute;
+width: 250px;
+height: 4px;
+top:110px;
+background: #0D8799;
+visibility: hidden;
+border-radius: 5px;
+transform: scaleX(0);
+transition: .25s linear;
+}
+a:hover:before,
+a:focus:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+
+
+body:hover {
+-webkit-animation: anim2 1s 1;
+-moz-animation: anim2 1s 1;
+-o-animation: anim2 1s 1;
+animation: anim2 1s 1;
+background-color:#F7F7F7;
+color:#888;
+}
+
+@-moz-keyframes anim {
+from {background-color:#F7F7F7;}
+to {background-color: #FFFFFF;}}
+
+@-webkit-keyframes anim {
+from {background-color:#F7F7F7;}
+to {background-color: #FFFFFF;}}
+
+@-webkit-keyframes anim2 {
+from {background-color: #FFFFFF;}
+to {background-color:#F7F7F7;}}
+
+@-moz-keyframes anim {
+from {background-color: #FFFFFF;}
+to {background-color:#F7F7F7;}}
+</style><center>
+<br><br>
+<font style="font-size:23px !important;" face="Segoe UI" >Nothing to show here, enter an address above eg.<br> <a href="https://duckduckgo.com">http://duckduckgo.com</a></font>
+
+</body>

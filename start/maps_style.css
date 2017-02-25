@@ -1,0 +1,143 @@
+body {
+  margin:0px;
+  padding:0px;
+}
+#splashscreen {
+  position:fixed;
+  width:100%;
+  height:100%;
+  color:#FFFFFF;
+  background-image:url('maps_splashscreen.png');
+  background-size:contain;
+  animation:splash 4s;
+  -ms-animation:splash 4s;
+  -webkit-animation:splash 4s;
+  -o-animation:splash 4s;
+  opacity:0;
+  z-index:-1;
+}
+@keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-webkit-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-ms-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+@-o-keyframes splash {
+  from {
+    z-index:2;
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  to {
+    opacity:0;
+    z-index:1;
+    display:none;
+  }
+}
+.commands {
+  background: #1e1e1e !important;
+  position:fixed;
+  bottom:0px;
+  width:100%;
+}
+.commands span {
+  line-height:14pt;
+  padding-bottom:20px;
+}
+#commands {
+  display:none;
+  color:#FFFFFF;
+}
+.commands-list {
+  margin:0;
+  padding:0;
+  margin-top:20px;
+  list-style:none;
+}
+.commands-list li{
+  display:inline-block;
+  float:left;
+  margin-right:20px;
+  margin-left:20px;
+}
+.commands-list li .command{
+  display:block;
+  text-align:center;
+  float:left;
+  cursor:pointer;
+  text-decoration:none;
+}
+.commands-list li .command img{
+  height:32px;
+  width:32px;
+}
+.commands-list li .command span{
+  display:block;
+  font-size:9pt;
+  font-family:'Segoe UI',sans-serif;
+}
+.commands-list li.divider{
+  width:1px;
+  border-right:1px #c3c3c3 solid;
+  height:48px;
+}
+.commands-list.margin-10 li{
+  margin-left:5px;
+  margin-right:5px;
+}
+.commands-list.margin-20 li{
+  margin-left:10px;
+  margin-right:10px;
+}
+.commands-list.margin-30 li{
+  margin-left:15px;
+  margin-right:15px;
+}
+.commands-list.margin-40 li{
+  margin-left:20px;
+  margin-right:20px;
+}
+.commands-list.place-left{
+  margin-left:20px;
+}
+.commands-list.place-right{
+  margin-right:20px;
+}

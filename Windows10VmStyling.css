@@ -1,0 +1,373 @@
+body {
+    background: url('Windows10VmBackground.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0px;
+    margin-bottom:100px;
+}
+::selection {
+    color: #FFFFFF;
+    background: #494949;
+}
+.dhtmlwindow {
+    /*Parent Window Frame*/
+
+    position: absolute;
+    border: 1px solid #CD543C;
+    border-bottom: 0px;
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 0px;
+    visibility: hidden;
+}
+.drag-handle {
+    /*Title Bar Frame*/
+
+    height: 23px;
+    padding-top: 6px;
+    text-indent: 10px;
+    font: 12px arial;
+    font: 12px Segoe UI;
+    font-weight: lighter;
+    background-color: #CC4429;
+    color: #ffffff;
+    overflow: hidden;
+    cursor: default;
+    width: auto;
+}
+.drag-handle .drag-controls {
+    /*Window Control Button Frames*/
+
+    position: absolute;
+    right: -1px;
+    top: -0px;
+    cursor: default;
+}
+.drag-contentarea {
+    /*Window Content Frame*/
+
+    background-color: #ffffff;
+    color: #305A4E;
+    overflow: auto;
+}
+.drag-statusarea {
+    /*CSS for Status Bar div (includes resizearea)*/
+
+    background-color: #CD543C;
+    height: 1px;
+    /*height of resize image*/
+}
+.drag-resizearea {
+    /*CSS for Resize Area itself*/
+
+    float: right;
+    width: 1px;
+    /*width of resize image*/
+
+    height: 1px;
+    /*height of resize image*/
+
+    cursor: nw-resize;
+}
+#icontext {
+    font-size: 11px;
+    color: #FFFFFF;
+    font-family: Segoe UI;
+    text-shadow: 0px 0px 5px #000000;
+}
+p {
+    padding: 5px;
+    font-family: Segoe UI;
+    font-size: 4;
+    color: #CC4429;
+}
+#notes {
+    height: 100% !important;
+    width: 100% !important;
+    background-color: #E44F31 !important;
+}
+[contenteditable="true"] {
+    font: 30px;
+    font-family: Segoe UI;
+    padding: 5px;
+    background-color: #E44F31;
+    color: #ffffff;
+    transition: background-color 0.65s ease;
+    height: 1000%;
+}
+[contenteditable="true"]:focus,
+[contenteditable="true"]:focus:hover {
+    outline: none;
+    background-color: #FF9800;
+}
+[contenteditable="true"]:hover {
+    outline: none;
+    background-color: #EE5233;
+}
+.BrowserWindow {
+    /*Browser Window Style*/
+
+    width: 960px;
+    height: 360px;
+    max-width: 100%;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+}
+#SD-StorageLogo {
+    background-color: rgba(255, 255, 255, .65);
+    border-radius: 50px;
+    z-index: 1000;
+    position: fixed;
+    text-decoration: none;
+    display: inline-block;
+    word-wrap: break-word;
+    box-shadow: 0px 0px 10px #535353;
+    bottom: 5;
+    right: 5;
+    transition: background-color 0.75s ease, padding 0.25s ease;
+}
+#SD-StorageLogo:hover {
+    padding: 2px;
+    background-color: rgba(255, 255, 255, .95);
+}
+#SD-StorageLogo:active {
+    background-color: #242B27;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 10px #FFFFFF;
+}
+.icon {
+    border: none;
+    width: 75px;
+    background: none;
+    text-align: center;
+    padding: 2px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    min-height: 65px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 11px;
+    color: #FFFFFF;
+    font-family: Segoe UI;
+    text-shadow: 0px 0px 5px #000000;
+}
+.icon:hover {
+    background-color: rgba(145, 236, 250, .3);
+}
+.icon:active {
+    background-color: rgba(122, 184, 250, .5);
+}
+.icon img {
+    /*Image Style For Desktop Icons*/
+
+    width: 49px;
+    height: 49px;
+}
+.Desktop a {
+    /*Link Style For Desktop Icons*/
+
+    text-decoration: none;
+}
+.Desktop {
+    display: flex;
+    height: calc(100vh - 20px);
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.drag-contentarea a {
+    color: #F7F7F7;
+    text-decoration: none;
+    padding: 2px;
+    background: #636363;
+    border-radius: 100px;
+}
+.drag-contentarea a:hover {
+    color: #FFFFFF;
+    background: #9D9D9D;
+}
+.drag-contentarea a:active {
+    color: #AEAEAE;
+    background: #F3F3F3;
+}
+.selection {
+    position: absolute;
+    border: 2px solid #007FAE;
+    background-color: #008AFF;
+}
+.ExitButton {
+    background: rgba(204, 68, 41, .9);
+    transition: background-color 0.3s ease;
+}
+.ExitButton:hover {
+    background-color: #F52034;
+}
+.ExitButton:active {
+    background-color: #D11E2E;
+}
+.NavButton {
+    background: rgba(204, 68, 41, .9);
+    transition: background-color 0.2s ease;
+}
+.NavButton:hover {
+    background-color: #DC4729;
+}
+.NavButton:active {
+    background-color: #E54C2E;
+}
+.taskbar {
+height:40px;
+position:absolute;
+bottom:0px;
+background-color: rgba(45, 45, 45, 0.78);
+width:100%;
+z-index:999;
+margin:0px !important;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none;   /* Chrome/Safari/Opera */
+-khtml-user-select: none;    /* Konqueror */
+-moz-user-select: none;      /* Firefox */
+-ms-user-select: none;       /* Internet Explorer/Edge */
+user-select: none;           /* Non-prefixed version, currently
+                                not supported by any browser */
+}
+
+.taskbar_button {
+position:absolute;
+bottom:0px;
+left:0px;
+padding:16px;
+padding-top:11px;
+padding-bottom:11px;
+background:none;
+width:18px;
+height:18px;
+transition: background-color 0.1s ease;
+}
+
+.taskbar_button:hover {
+background-color:rgba(105, 105, 105, 0.43);
+}
+
+.taskbar_button:active {
+background-color:rgba(160, 160, 160, 0.14);
+}
+
+.time {
+position:absolute;
+bottom:0px;
+right:0px;
+padding:10px;
+cursor: default;
+padding-top:5px;
+padding-bottom:5px;
+background:none;
+width:55px;
+text-align:center;
+height:30px;
+transition: background-color 0.1s ease;
+color: #fff;
+font-family: 'Segoe UI';
+font-size:12px;
+}
+
+.time:hover {
+background-color:rgba(105, 105, 105, 0.43);
+}
+
+.time:active {
+background-color:rgba(160, 160, 160, 0.14);
+}
+
+.start {
+position:absolute;
+left: 0;
+right: 0;
+width:100%;
+height: calc(100% - 40px);
+top: 0px;
+}
+
+/*Scrollbar CSS*/
+
+::-webkit-scrollbar {
+    width: 17px;
+    height: 17px;
+    background-color: #FAF9F9;
+    border: none
+}
+::-webkit-scrollbar-thumb {
+    background-color: #EFEFEF;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #E7E7E7;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #E3E3E3;
+}
+::-webkit-scrollbar-button {
+    background-color: #FAF9F9;
+    background-image: url(Windows10VmNavControls.png);
+    background-repeat: no-repeat
+}
+::-webkit-scrollbar-button:vertical {
+    height: 20px
+}
+::-webkit-scrollbar-button:horizontal {
+    width: 33px
+}
+::-webkit-scrollbar-button:horizontal:increment {
+    background-position: 0 -444px
+}
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-position: 12px -425px
+}
+::-webkit-scrollbar-button:vertical:increment {
+    background-position: -1px -391px
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    background-position: -1px -371px
+}
+::-webkit-scrollbar-button:hover {
+    background-color: #E7E7E7
+}
+::-webkit-scrollbar-button:horizontal:increment:hover {
+    background-position: 0 -548px
+}
+::-webkit-scrollbar-button:horizontal:decrement:hover {
+    background-position: 12px -529px
+}
+::-webkit-scrollbar-button:vertical:increment:hover {
+    background-position: -1px -495px
+}
+::-webkit-scrollbar-button:vertical:decrement:hover {
+    background-position: -1px -475px
+}
+::-webkit-scrollbar-button:active {
+    background-color: #E3E3E3
+}
+::-webkit-scrollbar-button:horizontal:increment:active {
+    background-position: 0 -652px
+}
+::-webkit-scrollbar-button:horizontal:decrement:active {
+    background-position: 12px -633px
+}
+::-webkit-scrollbar-button:vertical:increment:active {
+    background-position: -1px -599px
+}
+::-webkit-scrollbar-button:vertical:decrement:active {
+    background-position: -1px -579px
+}

@@ -1,0 +1,67 @@
+/*
+Windows 8 Scrollbar CSS
+by ntim007
+http://ntim007.kodingen.com
+http://ntim007.deviantart.com
+*/
+/* For Chrome or Safari */
+/* Scrollbar background color */
+::-webkit-scrollbar {
+background-color:#EFEFEF;
+padding:0;
+}
+/* UP, DOWN, LEFT and RIGHT button styling */
+::-webkit-scrollbar-button:hover {
+background-color:#DBDBDB !important;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+background:url('up.png') no-repeat center;
+}
+::-webkit-scrollbar-button:vertical:increment {
+background:url('down.png') no-repeat center;
+}
+::-webkit-scrollbar-button:horizontal:decrement {
+background:url('left.png') no-repeat center;
+}
+::-webkit-scrollbar-button:horizontal:increment {
+background:url('right.png') no-repeat center;
+}
+::-webkit-scrollbar-button:active:vertical:decrement {
+background:url('up-active.png') no-repeat center #606060 !important;
+}
+::-webkit-scrollbar-button:active:vertical:increment {
+background:url('down-active.png') no-repeat center #606060 !important;
+}
+::-webkit-scrollbar-button:active:horizontal:decrement {
+background:url('left-active.png') no-repeat center #606060 !important;
+}
+::-webkit-scrollbar-button:active:horizontal:increment {
+background:url('right-active.png') no-repeat center #606060 !important;
+}
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+background-color:#CDCDCD;
+opacity: 1;
+}
+::-webkit-scrollbar-thumb:hover {
+background-color:#A6A6A6;
+
+}
+::-webkit-scrollbar-thumb:active {
+background-color:#606060;
+
+}
+/* Some unstyled stuff */
+::-webkit-scrollbar-track {
+
+}
+::-webkit-scrollbar-track-piece {
+
+}
+
+::-webkit-scrollbar-corner {
+
+}
+::-webkit-resizer {
+
+}

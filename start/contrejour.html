@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Contre Jour</title>
+<link rel="stylesheet" href="common.css"/>
+<link rel="shortcut icon" href="http://contrejour.ie/favicon.ico"/>
+<script>
+function start(){
+  document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+  document.getElementById('startbutton').style.display='none';
+}
+</script>
+<script>
+function splash() {
+setTimeout(function() {document.getElementById('splashscreen').style.animation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.oAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.webkitAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.msAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.display='none';},2000);
+}
+</script>
+<style>
+#splashscreen {
+  background-color:#000000;
+  background-image:url(contrejour.png);
+  background-position:center;
+  background-repeat:no-repeat;
+}
+</style>
+</head>
+<body onmouseover="clock();" onload="splash()">
+<div id="splashscreen"></div>
+<iframe src="http://contrejour.ie" width="100%" height="100%"></iframe>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="start.html"><img src="start.png"/></a>
+</div>

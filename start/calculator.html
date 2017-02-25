@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Calculator</title>
+<link rel="stylesheet" href="calc_style.css"/>
+<link rel="stylesheet" href="calc_common.css"/>
+<link rel="shortcut icon" href="calc_favicon32.ico" size="32x32"/>
+<script src="jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="mousewheel.js" type="text/javascript"></script>
+<script>
+function start(){
+  document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+  document.getElementById('startbutton').style.display='none';
+}
+</script>
+
+<script>
+
+          function AddMouseWheel(){
+                $("body").mousewheel(function(event, delta){
+                    var scroll_value = delta * 50;
+                    if (!jQuery.browser.chrome) {
+                        document.documentElement.scrollLeft -= scroll_value;
+                } else {
+                    this.scrollLeft -= scroll_value;
+                }
+                return false;
+            });
+        }
+
+        $(function(){
+
+            AddMouseWheel();
+
+        })
+</script>
+</head>
+<body>
+<div id="splashscreen"></div>
+<div id="firstblock">
+<div class="blocktitle">Basic</div>
+<iframe src="basic.html" width="41%" height="60%" scrolling="no" frameborder="0">Your browser doesn't support iframes</iframe>
+</div>
+<div id="secondblock">
+<div class="blocktitle">Scientific</div>
+<iframe src="scientific.html" width="35%" height="65%" scrolling="no" frameborder="0">Your browser doesn't support iframes</iframe>
+</div>
+<div id="thirdblock">
+<div class="blocktitle">Tools</div>
+<iframe src="tools.html" width="100%" height="82%" scrolling="no" frameborder="0">Your browser doesn't support iframes</iframe>
+</div>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="start.html"><img src="start.png"/></a>
+</div>
+</body>
+</html>

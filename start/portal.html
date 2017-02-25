@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Portal</title>
+<link rel="stylesheet" href="common.css"/>
+<script>
+function start(){
+  document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+  document.getElementById('startbutton').style.display='none';
+}
+</script>
+<script>
+function splash() {
+setTimeout(function() {document.getElementById('splashscreen').style.animation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.oAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.webkitAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.msAnimation='splash 2s';},2000);
+setTimeout(function() {document.getElementById('splashscreen').style.display='none';},2000);
+}
+</script>
+<style>
+#splashscreen {
+  background-color:#FFFFFF;
+  background-image:url(portal.png);
+  background-position:center;
+  background-repeat:no-repeat;
+}
+</style>
+</head>
+<body onload="splash()">
+<div id="splashscreen"></div>
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="100%" HEIGHT="100%" id="animation/transparency" ALIGN="">
+ <PARAM NAME=movie VALUE="http://static.onlinegamesbazar.com/ogb_9387Fruit_Slasher_s.swf"> <PARAM NAME=quality VALUE=high><PARAM NAME=wmode VALUE=opaque> <PARAM NAME=bgcolor VALUE=#000000>
+  <EMBED src="http://portal.wecreatestuff.com/Portal_wcs2.swf" wmode="opaque" quality=high bgcolor=#000000  WIDTH="100%" HEIGHT="100%" NAME="transparency" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT>
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="start.html"><img src="start.png"/></a>
+</div>
+</body>
+</html>

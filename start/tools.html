@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Calculator</title>
+<link rel="stylesheet" href="calc_style.css"/>
+<link rel="stylesheet" href="calc_common.css"/>
+<link rel="shortcut icon" href="calc_favicon32.ico" size="32x32"/>
+  <script>
+function start(){
+  document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+  document.getElementById('startbutton').style.display='none';
+}
+</script>
+</head>
+<body>
+<div id="solver">
+<h2>Expression solver</h2>
+<p>Need to solve an expression ? Just type it in and click "Calculate !" !!</p>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function calc(form) {
+form.result.value=eval(form.expr.value);
+}
+// End -->
+</script>
+
+<form>
+<table border=2 cellspacing=1 cellpadding=5>
+<tr>
+<td align=center>Equation</td>
+<td align=center>Result</td>
+</tr>
+<tr>
+<td align=center><input type=text name=expr size=15></td>
+<td align=center><input type=text name=result size=15></td>
+<td><input type=button value="Calculate!"  class="resultbutton" onclick="calc(this.form)"></td>
+</tr>
+</table>
+</form>
+</div>
+<div id="datediff">
+<h2>Date difference</h2>
+ <script language="javascript" type="text/javascript">
+/* Visit http://www.yaldex.com/ for full source code
+and get more free JavaScript, CSS and DHTML scripts! */
+<!-- Begin
+function isValidDate(dateStr) {
+// Date validation function courtesty of
+// Sandeep V. Tamhankar (stamhankar@hotmail.com) -->
+
+// Checks for the following valid date formats:
+// MM/DD/YY MM/DD/YYYY MM-DD-YY MM-DD-YYYY
+
+var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{4})$/; // requires 4 digit year
+
+var matchArray = dateStr.match(datePat); // is the format ok?
+if (matchArray == null) {
+alert(dateStr + " Date is not in a valid format.")
+return false;
+}
+month = matchArray[1]; // parse date into variables
+day = matchArray[3];
+year = matchArray[4];
+if (month < 1 || month > 12) { // check month range
+alert("Month must be between 1 and 12.");
+return false;
+}
+if (day < 1 || day > 31) {
+alert("Day must be between 1 and 31.");
+return false;
+}
+if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+alert("Month "+month+" doesn't have 31 days!")
+return false;
+}
+if (month == 2) { // check for february 29th
+var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+if (day>29 || (day==29 && !isleap)) {
+alert("February " + year + " doesn't have " + day + " days!");
+return false;
+}
+}
+return true;
+}
+
+function isValidTime(timeStr) {
+// Time validation function courtesty of
+// Sandeep V. Tamhankar (stamhankar@hotmail.com) -->
+
+// Checks if time is in HH:MM:SS AM/PM format.
+// The seconds and AM/PM are optional.
+
+var timePat = /^(\d{1,2}):(\d{2})(:(\d{2}))?(\s?(AM|am|PM|pm))?$/;
+
+var matchArray = timeStr.match(timePat);
+if (matchArray == null) {
+alert("Time is not in a valid format.");
+return false;
+}
+hour = matchArray[1];
+minute = matchArray[2];
+second = matchArray[4];
+ampm = matchArray[6];
+
+if (second=="") { second = null; }
+if (ampm=="") { ampm = null }
+
+if (hour < 0 || hour > 23) {
+alert("Hour must be between 1 and 12. (or 0 and 23 for military time)");
+return false;
+}
+if (hour <= 12 && ampm == null) {
+if (confirm("Please indicate which time format you are using. OK = Standard Time, CANCEL = Military Time")) {
+alert("You must specify AM or PM.");
+return false;
+}
+}
+if (hour > 12 && ampm != null) {
+alert("You can't specify AM or PM for military time.");
+return false;
+}
+if (minute < 0 || minute > 59) {
+alert ("Minute must be between 0 and 59.");
+return false;
+}
+if (second != null && (second < 0 || second > 59)) {
+alert ("Second must be between 0 and 59.");
+return false;
+}
+return true;
+}
+
+function dateDiff(dateform) {
+date1 = new Date();
+date2 = new Date();
+diff = new Date();
+
+if (isValidDate(dateform.firstdate.value) && isValidTime(dateform.firsttime.value)) { // Validates first date
+date1temp = new Date(dateform.firstdate.value + " " + dateform.firsttime.value);
+date1.setTime(date1temp.getTime());
+}
+else return false; // otherwise exits
+
+if (isValidDate(dateform.seconddate.value) && isValidTime(dateform.secondtime.value)) { // Validates second date
+date2temp = new Date(dateform.seconddate.value + " " + dateform.secondtime.value);
+date2.setTime(date2temp.getTime());
+}
+else return false; // otherwise exits
+
+// sets difference date to difference of first date and second date
+
+diff.setTime(Math.abs(date1.getTime() - date2.getTime()));
+
+timediff = diff.getTime();
+
+weeks = Math.floor(timediff / (1000 * 60 * 60 * 24 * 7));
+timediff -= weeks * (1000 * 60 * 60 * 24 * 7);
+
+days = Math.floor(timediff / (1000 * 60 * 60 * 24));
+timediff -= days * (1000 * 60 * 60 * 24);
+
+hours = Math.floor(timediff / (1000 * 60 * 60));
+timediff -= hours * (1000 * 60 * 60);
+
+mins = Math.floor(timediff / (1000 * 60));
+timediff -= mins * (1000 * 60);
+
+secs = Math.floor(timediff / 1000);
+timediff -= secs * 1000;
+
+dateform.difference.value = weeks + " weeks, " + days + " days, " + hours + " hours, " + mins + " minutes, and " + secs + " seconds";
+
+return false; // form should never submit, returns false
+}
+// End -->
+</script>
+<form onSubmit="return dateDiff(this);">
+<table>
+<tr><td>
+<pre>
+<h3>First Date: </h3>
+Date:   <input type="text" name=firstdate value="" size=20 maxlength=10>  (MM/DD/YYYY format)
+Time:   <input type="time" name=firsttime value="" size=20 maxlength=10>  (HH:MM:SS format)
+
+<h3>Second Date: </h3>
+Date:   <input type="text" name=seconddate value="" size=20 maxlength=10>  (MM/DD/YYYY format)
+Time:   <input type="time" name=secondtime value="" size=20 maxlength=10>  (HH:MM:SS format)
+
+<div align="center"><input type=submit  class="resultbutton" value="Calculate Difference!">
+
+<h3>Date Difference:</h3>
+<input type=text name=difference value="" size=30>
+</div>
+</pre>
+</td></tr>
+</table>
+</form>
+</div>
+<div id="binaryconvert">
+<h2>Binary convertion</h2>
+<script language="javascript" type="text/javascript">
+<!-- Begin
+function toBin(form) {
+base = parseInt(form.base.value);
+num = parseInt(form.num.value);
+form.amount.value = num.toString(base);
+}
+//  End -->
+</script>
+<form name=numform>
+<input type=text name=num size=8> to base
+<input type=text name=base size=8 value=2 onBlur="if ((this.value<1)||(this.value>36)){alert('The base must be between 2 and 36.');this.select();this.focus();}">
+<input type=button class="resultbutton" value="=" onclick="toBin(this.form)">
+<input type=text name=amount size=15>
+</form>
+</div>
+
+<!-- Circle solver -->
+<div id="circlesolver">
+<h2>Circle solver</h2>
+<p>Enter the circle area, diameter, or circumference and it will solve for the other two!
+</p>
+<script language="javascript" type="text/javascript">
+/* Visit http://www.yaldex.com/ for full source code
+and get more free JavaScript, CSS and DHTML scripts! */
+<!-- Begin
+function circle(form,changed) {
+with (Math) {
+var area = form.area.value;
+var diameter = form.diameter.value;
+var circumference = form.circumference.value;
+if (changed == "area") {
+var radius = sqrt(area / PI);
+diameter = 2 * radius;
+circumference = PI * diameter;
+}
+if (changed == "diameter") {
+area = PI * (diameter / 2) * (diameter / 2);
+circumference = PI * diameter;
+}
+if (changed == "circumference") {
+diameter = circumference / PI;
+area = PI * (diameter / 2) * (diameter / 2);
+       }
+form.area.value = area;
+form.diameter.value = diameter;
+form.circumference.value = circumference;
+  }
+}
+var toDegrees = 360 / (Math.PI * 2);
+var toRadians = (Math.PI * 2) / 360;
+//  End -->
+</script>
+<form method=post>
+<table border="5">
+<tr>
+<td align=center>Area:</td>
+<td align=center><input type=text name=area size=20 value=0  onFocus="select()"></td>
+<td align=center><input type=button value="Solve Others" onClick="circle(this.form,'area')"  class="resultbutton"></td>
+</tr>
+<tr>
+<td align=center>Diameter:</td>
+<td align=center><input type=text name=diameter size=20 value=0 onFocus="select()"></td>
+<td align=center><input type=button value="Solve Others" onClick="circle(this.form,'diameter')"  class="resultbutton"></td>
+</tr>
+<tr>
+<td align=center>Circumference:</td>
+<td align=center><input type=text name=circumference size=20 value=0 onFocus="select()"></td>
+<td align=center><input type=button value="Solve Others" onClick="circle(this.form,'circumference')"  class="resultbutton"></td>
+</tr>
+</table>
+</form>
+</div>

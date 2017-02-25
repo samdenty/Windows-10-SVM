@@ -1,0 +1,81 @@
+<!doctype html>
+<html manifest="manifest.appcache">
+<head>
+  <meta charset=utf-8>
+  <title>Symbolistic!</title>
+
+
+  <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+  <meta name=viewport content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+
+  <meta name=apple-mobile-web-app-capable content=yes />
+
+
+
+  <link rel=stylesheet href='symbolistic_style.css'>
+
+    <script>
+function start(){
+  document.getElementById('startbutton').style.display='block';
+}
+function destroystart() {
+  document.getElementById('startbutton').style.display='none';
+}
+    </script>
+
+</head>
+
+<body class=s-w>
+<div id="splashscreen"></div>
+  <div id=start class=modal>
+    <p class=sp></p>
+    <div>
+      <h1>Symbolistic!</h1>
+      <p>Match the shape by selecting correct symbols.<br/>
+      Each correct match gives you points and additional time, so be quick!</p>
+      <button id=bS>Click to Start</button>
+    </div>
+  </div>
+  <div id=gameover class=modal>
+    <p class=sp></p>
+    <div>
+
+      <h2>You symbolistic, you! \o/</h2>
+      <p>
+        In total, you got <strong><span id=goPoints></span> points</strong> and survived for <strong><span id=goSeconds></span> seconds</strong>!
+        <span id=goHigh><br/>Your highest score so far has been <span id=goHighPoints></span> points</span>
+      </p>
+      <button id=bA>Play again</button>
+      or <a id=twBrag href="" target=_blank>Twitter brag »</a>
+    </div>
+  </div>
+
+    <header>
+    <span>Look for</span><span id=answer>?</span>
+    <span>Time</span><span id=stopwatch>00:00:00</span>
+      <span>Points</span><span id=points>00</span>
+    </header>
+    <div id=tiles>
+    </div>
+
+    <footer>
+
+    </footer>
+
+
+
+    <audio id=sClick>
+      <source src="click.mp3">
+    </audio>
+
+        <!-- CHARMS BAR CODE -->
+<div id="starthoverarea" onmouseover="start()" class="hotcorner">
+</div>
+<div id="startbutton" onmouseout="destroystart()">
+<a href="start.html"><img src="start.png"/></a>
+</div>
+  <script defer src='symbolistic_script.js'></script>
+
+</body>
+</html>

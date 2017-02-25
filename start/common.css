@@ -1,0 +1,150 @@
+body {
+	font-family:Segoe UI;
+	color:#FFFFFF;
+	margin:0px;
+	padding:0px;
+}
+iframe {
+	display:block;
+	border:none;
+	position:absolute;
+	z-index:-1;
+}
+object {
+	position:absolute;
+	z-index:-1;
+}
+img, a {
+	outline:none;
+	border:none;
+}
+@keyframes splash {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity:0;
+		display:none;
+	}
+}
+@-ms-keyframes splash {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity:0;
+		display:none;
+	}
+}
+@-webkit-keyframes splash {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity:0;
+		display:none;
+	}
+}
+@-o-keyframes splash {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity:0;
+		display:none;
+	}
+}
+#splashscreen {
+	position:fixed;
+	width:100%;
+	height:100%;
+	color:#FFFFFF;
+	z-index:1;
+}
+#hoverarea {
+	position:fixed;
+	top:0px;
+	right:0px;
+	width:15px;
+	height:15px;
+	z-index:999;
+}
+#bottomhoverarea {
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	width:15px;
+	height:15px;
+	z-index:999;
+}
+#starthoverarea {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:15px;
+	height:15px;
+	z-index:999;
+}
+#charmsbar {
+	display:none;
+	background-color:#111111;
+	position:fixed;
+	padding:5% 0;
+	top:0px;
+	right:0px;
+	height:100%;
+	width: 86px;
+
+}
+#settingscharms {
+	padding : 40px;
+	display:none;
+	background-color:#3B66AD;
+	position:fixed;
+	top:0px;
+	right:0px;
+	height:100%;
+	width: 345px;
+
+}
+#startbutton {
+	display:none;
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	z-index:999;
+}
+#iconnetwork {
+	position:absolute;
+	top:35px;
+	left:25px;
+}
+#iconbattery {
+	position:absolute;
+	bottom:35px;
+	left:32px;
+}
+#datetime {
+	display:none;
+	position:fixed;
+	left:50px;
+	bottom:50px;
+	width:490px;
+	height:139px;
+	background-color: rgba(17,17,17,1);
+}
+#time {
+	position:absolute;
+	left:70px;
+	bottom:19px;
+	font-family: Segoe UI Light;
+	font-size: 64pt;
+}
+#date {
+	margin-top:20px;
+	margin-right:20px;
+	float:right;
+	font-size:24pt;
+	font-family: Segoe UI;
+	color:#FFFFFF;
+}

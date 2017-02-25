@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SmartSearch</title>
+    <link rel="shortcut icon" href="favicon.ico" size="32x32" />
+    <!-- Stylesheet (file used to style the search box) -->
+    <link rel="stylesheet" href="smartsearch_style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="appbase.css" type="text/css" media="screen" />
+    <!-- Some JS -->
+     <script>
+      function forIconSearch(action,naction,img){
+        document.getElementById('multisearchFormIcon').action = action;
+        document.getElementById('Iconselectedsearch').src=img;
+        document.getElementById('input').name = naction;
+      }
+      function forWebSearch(action,text){
+        document.getElementById('multisearchForm').action = action;
+        document.getElementById('selectedsearch').innerHTML=text;
+      }
+      function show() {
+      document.getElementById('engines').style.visibility='visible';
+      document.getElementById('engines').style.display='inline-block';
+      document.getElementById('input').style.visibility='hidden';
+      document.getElementById('input').style.display='none';
+      document.getElementById('submit').style.visibility='hidden';
+      document.getElementById('submit').style.display='none'
+      document.getElementById('reset').style.visibility='hidden';
+      document.getElementById('reset').style.display='none';
+      document.getElementById('dropdown').style.visibility='hidden';
+      document.getElementById('dropdown').style.display='none';
+      document.getElementById('multisearchFormIcon').style.width='auto';
+
+      };
+      function hide() {
+      document.getElementById('input').style.visibility='visible';
+      document.getElementById('input').style.display='inline';
+      document.getElementById('engines').style.visibility='hidden';
+      document.getElementById('engines').style.display='none';
+      document.getElementById('submit').style.visibility='visible';
+      document.getElementById('submit').style.display='inline'
+      document.getElementById('reset').style.visibility='visible';
+      document.getElementById('reset').style.display='inline';
+      document.getElementById('dropdown').style.visibility='visible';
+      document.getElementById('dropdown').style.display='inline';
+      document.getElementById('multisearchFormIcon').style.width='auto';
+      };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+  $(document).ready(function() {
+      // if text input field value is not empty show the "X" button
+      $("#input").keyup(function() {
+          $("#reset").fadeIn();
+          if ($.trim($("#input").val()) == "") {
+              $("#reset").fadeOut();
+          }
+      });
+      $("#reset").click(function() {
+          $("#input").val("");
+          $(this).hide();
+      });
+  });
+  $(document).ready(function() {
+      $("#input").ready(function() {
+          $("#reset").fadeIn();
+          if ($.trim($("#input").val()) == "") {
+              $("#reset").fadeOut();
+          }
+      });
+  });
+    </script>
+    <script>
+      function visibility(visibility,id) {
+          document.getElementById(id).style.display = visibility;
+      }
+    </script>
+    <script>
+    function doublevisibility(visibility , target , target2) {
+        document.getElementById(target).style.display=visibility;
+        document.getElementById(target2).style.display=visibility;
+    }
+    </script>
+</head>
+<body>
+    <div id="splashscreen"></div>
+    <div id="appbar">
+        <div class="appbaricon" onclick="window.history.back()" id="back" title="Previous search"></div>
+        <div class="appbaricon" onclick="window.history.forward()" id="forward" title="Next search"></div>
+        <!-- Default search engine -->
+        <form name="multisearch" action="http://www.bing.com/search?q=" id="multisearchFormIcon" method="get" target="results">
+            <ul class="ws_drop_down" id="dropdown" onclick="show()">
+              <li><a style="width:40px;" title="Search"><img src="bing.png" width="16px" height="16px" id="Iconselectedsearch"></span>
+                <![if gt IE 6]>
+                </a>
+                <![endif]>
+                <!--[if lte IE 6]><table><tr><td><![endif]-->
+
+                <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                </li>
+            <!-- The form (where you type text) -->
+            </ul><input class="multisearchInput" id="input" list="autocomplete" name="q" type="text" placeholder="Search"/>
+            <div id="engines" style="visibility:hidden;display:none;">
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://search.yahoo.com/search?q=','q','yahoo.png');hide();" title="Search Yahoo !"><img src="yahoo.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.bing.com/search?q=','q','bing.png');hide();" title="Search Bing"><img src="bing.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://en.wikipedia.org/w/index.php?','search','wikipedia.png');hide();" title="Search Wikipedia"><img src="wikipedia.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://us.ask.com/web?q=','q','ask.png');hide();" title="Search Ask"><img src="ask.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('https://www.ixquick.com/do/search?q=','q','ixquick.png');hide();" title="Search Ixquick"><img src="ixquick.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://images.search.yahoo.com/search/images;_ylt=A2KJkPoGNPhPBUMAuaaLuLkF?q=','q','yimages.png');hide();" title="Search Yahoo ! Images"><img src="yimages.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.bing.com/images/search?q=','q','bimages.png');hide();" title="Search Bing Images"><img src="bimages.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://imgur.com/gallery?q=','q','imgur.png');hide();" title="Search Imgur"><img src="imgur.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('https://picasaweb.google.com/lh/view?q=','q','picasa.png');hide();" title="Search Picasa"><img src="picasa.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.flickr.com/search/?q=','q','flickr.png');hide();" title="Search Flickr"><img src="flickr.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://grooveshark.com/search?q=','q','grooveshark.png');hide();" title="Search Grooveshark"><img src="grooveshark.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://vimeo.com/search?q=','q','vimeo.png');hide();" title="Search Vimeo"><img src="vimeo.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.imdb.com/find?q=','q','imdb.png');hide();" title="Search IMDb"><img src="imdb.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.bing.com/videos/search?q=','q','bvideos.png');hide();" title="Search Bing Videos"><img src="bvideos.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.bing.com/maps/?q=','q','bmaps.png');hide();" title="Search Bing Maps"><img src="bmaps.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://browse.deviantart.com/?qh=&section=&global=1&q=','q','deviant.png');hide();" title="Search deviantART"><img src="deviant.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://dribbble.com/search?q=','q','dribbble.png');hide();" title="Search Dribbble"><img src="dribbble.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.reddit.com/search?q=','q','reddit.png');hide();" title="Search Reddit"><img src="reddit.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://www.livejournal.com/search/?q=','q','livejournal.png');hide();" title="Search LiveJournal"><img src="livejournal.png"/></a>
+                   <a href="javascript:void(0);" onclick="forIconSearch('http://s.maxthon.com/?q=','q','multisearch.png');hide();" title="Search Maxthon Multi-search"><img src="multisearch.png"/></a>
+            </div>
+            <!-- Autocomplete -->
+            <!-- Add unlimited suggestions using <option value=""/> -->
+            <datalist id="autocomplete">
+              <option value="Google"/>
+              <option value="Yahoo !"/>
+              <option value="Bing"/>
+              <option value="Yahoo Mail"/>
+              <option value="GMail"/>
+              <option value="Hotmail"/>
+              <option value="MSN"/>
+              <option value="News"/>
+              <option value="Facebook"/>
+              <option value="Twitter"/>
+              <option value="Google+"/>
+              <option value="G+"/>
+              <option value="Suggestions are fully customizable"/>
+            </datalist>
+            <!-- The "X" button -->
+            <input id="reset" name="reset" type="reset" value="" />
+            <!-- The submit button (search button) -->
+            <input id="submit" name="submit" type="submit" value="" />
+        </form>
+        <div class="appbaricon" onclick="window.location.reload()" id="reload" title="Reload"></div>
+    </div>
+    <iframe width="100%" height="81.5%" id="results" name="results" frameborder="0"></iframe>
+<div id="startbutton" onmouseout="visibility('none','startbutton')">
+    <a href="start.html"><img src="start.png"/></a>
+    </div>
+    <div id="starthoverarea" onmouseover="visibility('inline','startbutton')" class="hotcorner"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
